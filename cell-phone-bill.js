@@ -28,18 +28,19 @@ module.exports = function(){
 		});
 		return listOfPhoneBills;
 	}
-    this.specifiedProvider = function(listOfMaps,provider){
-    	listOfVodacom=[];
-    	listOfMaps.forEach(function(map){
-    		if(map.provider = provider){
-               listOfVodacom.push(map); 
-    		}
-    		listOfVodacom.push(map);
-    	});
-    	  
+    this.specifiedProvider = function(listOfMaps, Provider){
+    	var specificProvider =[];
+    	
+    	
+		for(var i = 0; i < listOfMaps.length; i++){
+			var value = listOfMaps[i];
+			if(value.provider === Provider && value.provider != undefined){
+				specificProvider.push(value);
+                console.log(listOfMaps[i]);
+			}
+		}     
+		//console.log(specificProvider);
+		return specificProvider;
+	};
 
-    	 
-    	 //console.log(listOfVodacom);
-    	 return listOfVodacom;
-    }
- }
+}
