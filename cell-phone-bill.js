@@ -26,10 +26,11 @@ module.exports = function(){
 			}
 			lineNumber = lineNumber + 1;
 		});
+		//console.log(listOfPhoneBills);
 		return listOfPhoneBills;
 	}
    
-this.specifiedProvider = function(listOfMaps, Provider){
+  this.specifiedProvider = function(listOfMaps, Provider){
     	var specificProvider =[];
     	
     	
@@ -44,9 +45,7 @@ this.specifiedProvider = function(listOfMaps, Provider){
 		return specificProvider;
 	};
 
-
-
-this.totalCalls = function(listOfMaps) {
+  this.totalCalls = function(listOfMaps) {
 		var phoneCallsMap = {};
 		for(var i = 0; i < listOfMaps.length; i++){
 			var value = listOfMaps[i];
@@ -55,9 +54,34 @@ this.totalCalls = function(listOfMaps) {
 			}
 			phoneCallsMap[value.provider] = phoneCallsMap[value.provider]+1;
 		}
-		console.log(listOfMaps);
-        //console.log(phoneCallsMap);
+		//console.log(phoneCallsMap);
 		return phoneCallsMap;
 	}
+  this.durationSeconds = function(listOfMaps){
+    var listDurationSeconds =[];
+    for(var i = 0; i < listOfMaps.length; i++){
+		var value = listOfMaps[i];
+			
+        var callDuration = value.duration; 
+			
+            //console.log(callDuration);
+        var replace_h = callDuration.replace(/h/g,":");
+	    var replace_m = replace_h.replace(/m/g,":");
+	    var replace_s = replace_m.replace(/s/g,"");
+	
+        var replace_s = replace_s.split(':');
+        var seconds = (replace_s[0]) * 60 * 60 + (+replace_s[1]) * 60 + (+replace_s[2]);
+   
+        var map = {
+   		    durationInSeconds :seconds
+        }
+
+   listDurationSeconds.push(map);
+
+    }
+
+//console.log(listDurationSeconds);
+  return listDurationSeconds;
+ }
 
 }
