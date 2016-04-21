@@ -44,6 +44,25 @@ app.get('/CellC', function (req, res) {
     var cellc= cellCMap.specifiedProvider(listOfMaps,"CellC");
     res.render('cellc',{list: cellc} );   
 });
+app.get('/durationInSeconds', function (req, res) {
+    var phone = new  Cell_phone_bills();
+        
+    var results = phone.durationSeconds(listOfMaps);
+    res.render('durationseconds',{list: results} );   
+});
+app.get('/durationInSeconds', function (req, res) {
+    var phone = new  Cell_phone_bills();
+        
+    var results = phone.durationSeconds(listOfMaps);
+    res.render('durationseconds',{list: results} );   
+});
+
+app.get('/ascendingDuration', function (req, res) {
+    var phone = new  Cell_phone_bills();
+        
+    var results = phone.ascendingDuration(listOfMaps);
+    res.render('ascendingDuration',{list: results} );   
+});
 
 
 

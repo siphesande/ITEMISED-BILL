@@ -1,17 +1,16 @@
-<h1>MTN </h1>
+<h1>Call Duration in Seconds </h1>
    <table class>
       <thead>   
          <th> Provider</th>
-          <th>Number</th>
-          <th>Durations(h:m:s)</th>
-          <th>Date(d/m/y) </th>
+         
+          <th>Durations(seconds)</th>
+        
         </thead>
 	{{#each list}}
 		<tr>
-    <td>{{provider}}</td>
-    <td>{{ number}}</td>
-    <td>{{ duration}}</td>
-    <td>{{ date}} </td>
+   <td width="60%"><h3>{{provider}} </td width="40%" > 
+      <td> {{durationInSeconds}}</h3> </td>
+    
 
 		</tr>
 

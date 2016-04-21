@@ -82,7 +82,7 @@ module.exports = function(){
  //console.log(listDurationSeconds);
   return listDurationSeconds;
  }
-   this.acsendingDuration = function(listDurationSeconds){
+   this.ascendingDuration = function(listDurationSeconds){
  
 
    listDurationSeconds.sort(function(a,b){
@@ -90,6 +90,7 @@ module.exports = function(){
    		{return(a.durationInSeconds - b.durationInSeconds)};
    	});
   // console.log(listDurationSeconds);
+   
    return listDurationSeconds;
  }
 

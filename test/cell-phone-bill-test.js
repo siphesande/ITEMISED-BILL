@@ -52,7 +52,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
        
 
        var results = phone.durationSeconds(list);
-       //console.log(results);
+      // console.log(results);
 	   assert.equal(35 , results.length);
 	
  });
@@ -60,8 +60,8 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var phone = new  Cell_phone_bills();
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
-       var results = phone.acsendingDuration(listDurationSeconds);
-       //console.log(results);
+       var results = phone.ascendingDuration(listDurationSeconds);
+       console.log(results);
 	   assert.equal(35 , results.length);
     });
     it("sorted by cell phone provider, with a call duration sub-total at the end of each provider", function(){
