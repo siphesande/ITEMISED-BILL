@@ -95,15 +95,4 @@ module.exports = function(){
    return listDurationSeconds;
  }
 
-this.phoneProvider = function(listOfPhoneBills) {
-var totalTime =0;
-  for (var x in listOfPhoneBills){
-    time = parseInt(listOfPhoneBills[x].durationInSeconds);
-    totalTime += time;
-    //console.log(totalTime);
-  }
-  var total = {provider: listOfPhoneBills[0].provider, sub_totalDuration : totalTime}
-  console.log(total);
-  return total;
- };
-}
+
