@@ -1,0 +1,30 @@
+body{
+
+	background-color: #e5ffe5;
+}
+.button{
+
+	background-color: #99FF33;
+	
+	width: 150px;
+	height: 10px;
+}
+
+table {
+    border-collapse: separate;
+    width: 5%;
+    border: 1px solid #FFFFCC;
+}
+td {
+    border: 1px solid #FFFFCC;
+}
+.move {
+    /*background-color:black;*/
+    /*color:white;*/
+    /*margin-:20px;*/
+    margin-left:200px;
+    float:left;
+
+    margin-top:-750px;
+    padding:30px;
+} 
