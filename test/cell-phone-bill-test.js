@@ -11,7 +11,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
 		 assert.equal(35, listOfMaps.length);
             
         });
-    it("should return all the phone calls for the specified provider",function(){
+    it("should return all the phone calls for the Vodacom provider",function(){
     	var vodacomMap = new Cell_phone_bills();
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
@@ -20,7 +20,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	assert.equal(8,voda.length);
 
     });
-    it("should return all the phone calls for the specified provider",function(){
+    it("should return all the phone calls for the MTN provider",function(){
     	var vodacomMap = new Cell_phone_bills();
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
@@ -29,7 +29,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	assert.equal(16,voda.length);
 
     });
-    it("should return all the phone calls for the specified provider",function(){
+    it("should return all the phone calls for the CellC provider",function(){
     	var vodacomMap = new Cell_phone_bills();
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
@@ -68,9 +68,12 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var phone = new  Cell_phone_bills();
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
-       var results = phone.phoneProvider(listDurationSeconds);
-       //console.log(results);
-	   assert.equal({ provider: 'MTN', sub_totalDuration: 6928 } , results);
+       var results = phone.phoneProvider(listDurationSeconds,"MTN","Vodacom","CellC");
+       console.log(results);
+	   assert.deepEqual([ { provide: 'MTN', sub_total1: 3471 },
+                          { provide: 'Vodacom', sub_total2: 610 },
+                          { provide: 'Vodacom', sub_total3: 2847 } ]
+                          , results);
     });
 });
 

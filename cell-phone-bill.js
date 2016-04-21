@@ -9,8 +9,6 @@ module.exports = function(){
 
 		rows.forEach(function(row) {
 
-			// var phone = row.split(',').splice(1);
-
 			if(lineNumber != 0){
                 var columns = row.split(','); 
 
@@ -91,19 +89,49 @@ module.exports = function(){
    		//console.log(a.durationInSeconds -b.durationInSeconds);
    		{return(a.durationInSeconds - b.durationInSeconds)};
    	});
-   //console.log(listDurationSeconds);
+  // console.log(listDurationSeconds);
    return listDurationSeconds;
  }
 
-this.phoneProvider = function(listOfPhoneBills) {
-var totalTime =0;
-  for (var x in listOfPhoneBills){
-    time = parseInt(listOfPhoneBills[x].durationInSeconds);
-    totalTime += time;
-    //console.log(totalTime);
+this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvider2,serviceProvider3){
+	var phoneCallList = [];
+	var sub_total1 =0;
+	var sub_total2 =0;
+	var sub_total3 =0;
+		for(var x in listDurationSeconds){
+			if(listDurationSeconds[x].provider == serviceProvider1 && listDurationSeconds[x] !== undefined){
+            seconds1 = parseInt(listDurationSeconds[x].durationInSeconds);
+            sub_total1 += seconds1;
+       }
+   }
+
+       for(var x in listDurationSeconds){
+			if(listDurationSeconds[x].provider == serviceProvider2 && listDurationSeconds[x] !== undefined){
+            seconds2 = parseInt(listDurationSeconds[x].durationInSeconds);
+            sub_total2 += seconds2;
+       }
+   }
+       for(var x in listDurationSeconds){
+			if(listDurationSeconds[x].provider == serviceProvider3 && listDurationSeconds[x] !== undefined){
+            seconds3 = parseInt(listDurationSeconds[x].durationInSeconds);
+            sub_total3 += seconds3;
+       }
+     }
+
+           map1 = {
+				provider :serviceProvider1,
+                sub_total1: sub_total1
+           }
+            map2 = {
+				provider :serviceProvider2,
+                sub_total2: sub_total2
+           }
+			map3 = {
+				provider :serviceProvider2,
+                sub_total3: sub_total3
+           }
+   
+ phoneCallList.push(map1,map2,map3);
+	return phoneCallList;	
   }
-  var total = {provider: listOfPhoneBills[0].provider, sub_totalDuration : totalTime}
-  console.log(total);
-  return total;
- };
 }
