@@ -127,7 +127,7 @@ this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvi
                 sub_total2: sub_total2
            }
 			map3 = {
-				provider :serviceProvider2,
+				provider :serviceProvider3,
                 sub_total3: sub_total3
            }
    

@@ -70,9 +70,10 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
        var results = phone.phoneProvider(listDurationSeconds,"MTN","Vodacom","CellC");
        console.log(results);
-	   assert.deepEqual([ { provide: 'MTN', sub_total1: 3471 },
-                          { provide: 'Vodacom', sub_total2: 610 },
-                          { provide: 'Vodacom', sub_total3: 2847 } ]
+	   assert.deepEqual([ { provider: 'MTN', sub_total1: 3471 },
+  { provider: 'Vodacom', sub_total2: 610 },
+  { provider: 'CellC', sub_total3: 2847 } ]
+
                           , results);
     });
 });
