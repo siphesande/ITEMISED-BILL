@@ -16,7 +16,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
     	var voda = vodacomMap.specifiedProvider(listOfMaps,"Vodacom");
-    	//console.log(voda);
+    	console.log(voda);
     	assert.equal(8,voda.length);
 
     });
@@ -69,7 +69,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
        var results = phone.phoneProvider(listDurationSeconds,"MTN","Vodacom","CellC");
-       console.log(results);
+       //console.log(results);
 	   assert.deepEqual([ { provider: 'MTN', sub_total1: 3471 },
   { provider: 'Vodacom', sub_total2: 610 },
   { provider: 'CellC', sub_total3: 2847 } ]

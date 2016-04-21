@@ -1,14 +1,21 @@
-<h1>duration sub-total</h1>
+<h1>Itemised cell phone bill </h1>
    <table class>
       <thead>   
          <th> Provider</th>
-          <th>Sub-Totals </th>
+          <th>Number</th>
+          <th>Durations</th>
+          <th>Date </th>
         </thead>
 	{{#each list}}
 		<tr>
-			<td width="75%"><h3>{{provider}} </td width="30%" > 
-      <td> {{sub_total1}}{{sub_total2}}{{sub_total3}}</h3> </td>
+    <td> {{provider}}</td>
+    <td>{{number}}</td>
+    <td>{{durations}}</td>
+    <td>{{date}} </td>
+
 		</tr>
+
+
 	{{/each}}
 </table>
 <div class ="well">

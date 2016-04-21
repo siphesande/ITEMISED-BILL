@@ -19,6 +19,34 @@ app.get('/', function (req, res) {
   res.render('home');
 
 });
+app.get('/listOfPhoneBills', function (req, res) {
+    
+    res.render('listOfMaps',{list: listOfMaps} );   
+});
+
+app.get('/Vodacom', function (req, res) {
+   var vodacomMap = new Cell_phone_bills();
+        
+    var voda = vodacomMap.specifiedProvider(listOfMaps,"Vodacom");
+    res.render('vodacom',{list: voda} );   
+});
+
+app.get('/MTN', function (req, res) {
+   var mtnMap = new Cell_phone_bills();
+        
+    var mtn = mtnMap.specifiedProvider(listOfMaps,"MTN");
+    res.render('mtn',{list: mtn} );   
+});
+
+app.get('/CellC', function (req, res) {
+   var cellCMap = new Cell_phone_bills();
+        
+    var cellc= cellCMap.specifiedProvider(listOfMaps,"CellC");
+    res.render('cellc',{list: cellc} );   
+});
+
+
+
 
 app.get('/totalDurationOfProvider', function (req, res) {
     var phone = new  Cell_phone_bills();
