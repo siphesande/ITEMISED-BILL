@@ -46,6 +46,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	//console.log(voda);
     	assert.deepEqual(voda,{ MTN: 16, Vodacom: 8, CellC: 11 });
     });
+
     it('should calculate the duration in seconds of a call', function(){
        var phone = new  Cell_phone_bills();
        var list = phone.find_cell_phone_bill('./ItemisedBill.csv');
@@ -56,6 +57,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
 	   assert.equal(35 , results.length);
 	
  });
+
     it("should calculate return  order the calls by ascending duration", function(){
     	var phone = new  Cell_phone_bills();
         
@@ -76,6 +78,51 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
 
                           , results);
     });
+   it('returns list of total phone calls to a number from MTN', function () {
+     var phone_bills = new Cell_phone_bills();
+     var mtnMap = phone_bills.specifiedProvider(listOfMaps,"MTN");
+      var providerMap = phone_bills.totalCallsPerNumber(mtnMap);
+      var results = { '0832401145': 5,
+                      '0838758090': 5,
+                      '0831239023': 3,
+                      '0832004576': 1,
+                      '0837351200': 1,
+                      '0834590001': 1
+                    }
+
+
+      assert.deepEqual(providerMap, results);
+   
+    });
+   it('returns list of total phone calls to a number from MTN', function () {
+     var phone_bills = new Cell_phone_bills();
+     var mtnMap = phone_bills.specifiedProvider(listOfMaps,"Vodacom");
+      var providerMap = phone_bills.totalCallsPerNumber(mtnMap);
+      var results = { '0821302398': 2,
+                      '0828907600': 1,
+                      '0824501276': 1,
+                      '0821005078': 1,
+                      '0828009712': 1,
+                      '0828901271': 1,
+                      '0824009001': 1 }
+
+      console.log(providerMap);
+      assert.deepEqual(providerMap, results);
+   
+    });
+   it('returns list of total phone calls to a number from MTN', function () {
+     var phone_bills = new Cell_phone_bills();
+     var mtnMap = phone_bills.specifiedProvider(listOfMaps,"CellC");
+      var providerMap = phone_bills.totalCallsPerNumber(mtnMap);
+      var results = { '0841257809': 8, '0825605600': 2, '0845009087': 1 }
+      console.log(providerMap);
+      assert.deepEqual(providerMap, results);
+   
+    });
+ 
+ 
+ 
+
 });
 
 

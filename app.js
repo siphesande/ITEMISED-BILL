@@ -35,7 +35,15 @@ app.get('/MTN', function (req, res) {
    var mtnMap = new Cell_phone_bills();
         
     var mtn = mtnMap.specifiedProvider(listOfMaps,"MTN");
-    res.render('mtn',{list: mtn} );   
+////////////////////////////////////////////////////////////////////////
+    
+    var providerMap = mtnMap.totalCallsPerNumber(mtnMap);
+
+
+    res.render('mtn',{
+        list: mtn,
+        numbers:providerMap
+    });   
 });
 
 app.get('/CellC', function (req, res) {

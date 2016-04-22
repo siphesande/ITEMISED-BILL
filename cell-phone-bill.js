@@ -135,4 +135,24 @@ this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvi
  phoneCallList.push(map1,map2,map3);
 	return phoneCallList;	
   }
+
+
+this.totalCallsPerNumber = function(providerMap) {
+  var totalCallsMap = {};
+  for (var x in providerMap){
+
+
+    if(!totalCallsMap[providerMap[x].number]){
+      totalCallsMap[providerMap[x].number] = 1;
+    }
+    else{
+      totalCallsMap[providerMap[x].number] += 1;
+    }
+
+  }
+  //console.log(totalCallsMap);
+    return totalCallsMap;
+
+ }
+
 }
