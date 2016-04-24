@@ -1,10 +1,28 @@
 
-var Handlebars = require("handlebars");
-var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-             "{{kids.length}} kids:</p>" +
-             "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
-var template = Handlebars.compile(source);
- 
-var data = { "name": "Alan", "hometown": "Somewhere, TX",
-             "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
-var result = template(data);
+<div id="forrst" class="forrst-profile">
+    <script id="forrst-profile-template" type="text/x-handlebars-template">
+        <div class="profile">
+            <figure class="avatar">
+                <img src="{{photos.medium_url}}" alt="">
+            </figure>
+            <div class="person">
+                <h3 class="person-name"><a href="{{url}}">{{name}}</a></h3>
+                <div class="person-bio">{{{bio}}}</div>
+            </div>
+        </div>
+        <div class="social-count">
+            <div class="social-item social-posts">
+                <div class="heading">Posts</div>
+                <div class="counts">{{posts}}</div>
+            </div>
+            <div class="social-item social-followers">
+                <div class="heading">Followers</div>
+                <div class="counts">{{followers}}</div>
+            </div>
+            <div class="social-item social-following">
+                <div class="heading">Following</div>
+                <div class="counts">{{following}}</div>
+            </div>
+        </div>
+    </script>
+</div>

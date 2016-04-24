@@ -16,7 +16,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
     	var voda = vodacomMap.specifiedProvider(listOfMaps,"Vodacom");
-    	console.log(voda);
+    	//console.log(voda);
     	assert.equal(8,voda.length);
 
     });
@@ -43,7 +43,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
     	var voda = vodacomMap.totalCalls(listOfMaps);
-    	//console.log(voda);
+    	console.log(voda);
     	assert.deepEqual(voda,{ MTN: 16, Vodacom: 8, CellC: 11 });
     });
 
@@ -63,7 +63,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
        var results = phone.ascendingDuration(listDurationSeconds);
-       console.log(results);
+       //console.log(results);
 	   assert.equal(35 , results.length);
     });
     it("sorted by cell phone provider, with a call duration sub-total at the end of each provider", function(){
@@ -71,7 +71,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
        var results = phone.phoneProvider(listDurationSeconds,"MTN","Vodacom","CellC");
-       //console.log(results);
+      // console.log(results);
 	   assert.deepEqual([ { provider: 'MTN', sub_total1: 3471 },
   { provider: 'Vodacom', sub_total2: 610 },
   { provider: 'CellC', sub_total3: 2847 } ]
@@ -106,7 +106,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
                       '0828901271': 1,
                       '0824009001': 1 }
 
-      console.log(providerMap);
+      //console.log(providerMap);
       assert.deepEqual(providerMap, results);
    
     });
@@ -115,7 +115,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
      var mtnMap = phone_bills.specifiedProvider(listOfMaps,"CellC");
       var providerMap = phone_bills.totalCallsPerNumber(mtnMap);
       var results = { '0841257809': 8, '0825605600': 2, '0845009087': 1 }
-      console.log(providerMap);
+      //console.log(providerMap);
       assert.deepEqual(providerMap, results);
    
     });
