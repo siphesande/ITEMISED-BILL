@@ -71,13 +71,25 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
         
        var listDurationSeconds = phone.durationSeconds(listOfMaps);
        var results = phone.phoneProvider(listDurationSeconds,"MTN","Vodacom","CellC");
-      // console.log(results);
+       //console.log(results);
 	   assert.deepEqual([ { provider: 'MTN', sub_total1: 3471 },
   { provider: 'Vodacom', sub_total2: 610 },
   { provider: 'CellC', sub_total3: 2847 } ]
 
                           , results);
     });
+    // it("sorted by cell phone provider, with a call duration sub-total at the end of each provider", function(){
+    // 	var phone = new  Cell_phone_bills();
+        
+    //    var listDurationSeconds = phone.durationSeconds(listOfMaps);
+    //    var results = phone.totalCallTime(listDurationSeconds);
+    //    console.log(results);
+	   // assert.deepEqual(6928 ,results);
+    // });
+
+
+
+
    it('returns list of total phone calls to a number from MTN', function () {
      var phone_bills = new Cell_phone_bills();
      var mtnMap = phone_bills.specifiedProvider(listOfMaps,"MTN");

@@ -1,32 +1,28 @@
-<!-- <h1>duration sub-total</h1>
-   <table class>
+<style>
+body{
+  background-color:#ffcc66
+}
+table, th, td {
+   border: 1px solid black;
+}
+
+</style>
+
+
+<h1>Duration totals</h1>
+   <table class >
       <thead>   
          <th> Provider</th>
-          <th>Sub-Totals </th>
+          <th>The total call Duration for each Provider(seconds)</th>
+          <th>Over roll total</th>
         </thead>
-	{{#bills}}
+	{{#results}}
 		<tr>
-			<td width="75%"><h3>{{provider}} </td width="30%" > 
-      <td> {{sub_total1}}{{sub_total2}}{{sub_total3}}</h3> </td>
+			<td> {{provider}} </td>
+      <td> {{sub_total1}}{{sub_total2}}{{sub_total3}}</td>
+      <td>{{overRollTotal}}</td>
 		</tr>
-	{{/bills}}
-</table> -->
+	{{/results}}
+</table>
  
  
-{{#bills}}
-    <p>{{provider}}</p>
-  {{/bills}}
-
-<!-- <!DOCTYPE html>
-<html>
-<body>
-
-<script src="h.js">
-</script>
-{{#bills}}
-    <p>{{sub_total1}}</p>
-  {{/bills}}
-
-
-</body>
-</html>

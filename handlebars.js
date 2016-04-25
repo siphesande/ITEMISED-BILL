@@ -23,9 +23,9 @@ var data = {results};
 //console.log(bills);
 var result = template(data);
 
-///http://jsfiddle.net/webpro/9xwum/     example
-fs.writeFileSync('_display.html', result);
-//document.body.innerHTML = result;
+
+fs.writeFileSync('_bowser.html', result);
+
 
 
 

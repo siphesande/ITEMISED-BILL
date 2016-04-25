@@ -99,6 +99,7 @@ this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvi
 	var sub_total1 =0;
 	var sub_total2 =0;
 	var sub_total3 =0;
+	var total = 0;
 		for(var x in listDurationSeconds){
 			if(listDurationSeconds[x].provider == serviceProvider1 && listDurationSeconds[x] !== undefined){
             seconds1 = parseInt(listDurationSeconds[x].durationInSeconds);
@@ -119,6 +120,13 @@ this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvi
        }
      }
 
+   for(var x in listDurationSeconds){
+			if( listDurationSeconds[x] !== undefined){
+            seconds = parseInt(listDurationSeconds[x].durationInSeconds);
+            total += seconds;
+       }
+     }
+
            map1 = {
 				provider :serviceProvider1,
                 sub_total1: sub_total1
@@ -131,10 +139,35 @@ this.phoneProvider = function(listDurationSeconds, serviceProvider1,serviceProvi
 				provider :serviceProvider3,
                 sub_total3: sub_total3
            }
-   
- phoneCallList.push(map1,map2,map3);
+   var totals = sub_total1+sub_total3+sub_total2;
+
+          map = {
+          	providers : serviceProvider1,serviceProvider2,serviceProvider3,
+          	overRollTotal : totals
+          }
+   console.log(totals);
+
+// map4 ={
+// 	Providers = 
+
+// 	}
+
+
+           
+ phoneCallList.push(map1,map2,map3,map);
+ console.log(phoneCallList);
 	return phoneCallList;	
   }
+
+this.totalCallTime = function(listDurationSeconds) {
+var totalTime =0;
+  for (var x in listDurationSeconds){
+    timeDuration = parseInt(listDurationSeconds[x].durationInSeconds);
+    totalTime += timeDuration;
+  }
+  var total =  totalTime
+  return total;
+};
 
 
 this.totalCallsPerNumber = function(providerMap) {
