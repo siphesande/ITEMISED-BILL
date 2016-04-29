@@ -79,7 +79,7 @@ module.exports = function(){
 
     }
 
- //console.log(listDurationSeconds);
+ console.log(listDurationSeconds);
   return listDurationSeconds;
  }
    this.ascendingDuration = function(listDurationSeconds){
@@ -89,7 +89,7 @@ module.exports = function(){
    		//console.log(a.durationInSeconds -b.durationInSeconds);
    		{return(a.durationInSeconds - b.durationInSeconds)};
    	});
-  // console.log(listDurationSeconds);
+   console.log(listDurationSeconds);
    
    return listDurationSeconds;
  }

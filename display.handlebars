@@ -1,20 +1,31 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <style>
 body{
-  background-color:#ffcc66
+  background-color:#66ffff;
 }
 table, th, td {
    border: 1px solid black;
 }
+.well{
+	background-color: #00e6e6;
+}
 
 </style>
 
-
-<h1>Duration totals</h1>
+<div class="well">
+<h1>ITEMISED BILL KATA</h1>
+</div>
+   <h1>Itemized Bill with Totals and Sub-Totals</h1>
    <table class >
       <thead>   
-         <th> Provider</th>
-          <th>The total call Duration for each Provider(seconds)</th>
-          <th>Over roll total</th>
+         <th>Network Provider</th>
+          <th>The total call Duration for each Provider(sec)</th>
+          <th>Over roll total(sec)</th>
         </thead>
 	{{#results}}
 		<tr>
@@ -24,5 +35,7 @@ table, th, td {
 		</tr>
 	{{/results}}
 </table>
- 
+ <h2>This is my last Demo ...will miss Steve</h2>
+<img src="fish-Stock.jpg" alt="Mountain View" style="width:304px;height:228px;">
+<img src="penguin.jpg" alt="Mountain View" style="width:304px;height:228px;">
  

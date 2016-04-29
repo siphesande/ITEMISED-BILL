@@ -7,7 +7,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
 
     it('should return a list of maps of Itemised cell phone bill ', function(){
          
-		 //console.log(listOfMaps);
+		 console.log(listOfMaps);
 		 assert.equal(35, listOfMaps.length);
             
         });
@@ -43,7 +43,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
     	var listOfMaps = cell_phone_bills.find_cell_phone_bill('./ItemisedBill.csv');
 
     	var voda = vodacomMap.totalCalls(listOfMaps);
-    	console.log(voda);
+    	//console.log(voda);
     	assert.deepEqual(voda,{ MTN: 16, Vodacom: 8, CellC: 11 });
     });
 
@@ -78,19 +78,8 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
 
                           , results);
     });
-    // it("sorted by cell phone provider, with a call duration sub-total at the end of each provider", function(){
-    // 	var phone = new  Cell_phone_bills();
-        
-    //    var listDurationSeconds = phone.durationSeconds(listOfMaps);
-    //    var results = phone.totalCallTime(listDurationSeconds);
-    //    console.log(results);
-	   // assert.deepEqual(6928 ,results);
-    // });
-
-
-
-
-   it('returns list of total phone calls to a number from MTN', function () {
+    
+it('returns list of total phone calls to a number from MTN', function () {
      var phone_bills = new Cell_phone_bills();
      var mtnMap = phone_bills.specifiedProvider(listOfMaps,"MTN");
       var providerMap = phone_bills.totalCallsPerNumber(mtnMap);
@@ -131,11 +120,7 @@ describe("read an Itemised cell phone bill in ItemisedBill.csv file", function()
       assert.deepEqual(providerMap, results);
    
     });
- 
- 
- 
-
-});
+ });
 
 
 
